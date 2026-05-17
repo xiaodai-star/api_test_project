@@ -1,8 +1,29 @@
-我直接给你**排版精修好、可直接复制进 README.md 的 Markdown 版本**，结构清晰、层级分明、GitHub 预览超好看，你直接全选复制替换就行：
+我直接给你**一模一样、一键复制就能实现的 GitHub 好看标题+排版代码**，你复制进 `README.md` 就能和这个效果完全一样！
 
+# 核心原理
+- `# 一级标题`：GitHub 自动**超大、加粗、黑体**
+- `## 二级标题`：次一级大标题
+- 普通文字：正常大小
+- 列表用 `-`：自动圆点排版
+
+---
+
+# 直接复制的完整美化版（和你截图风格1:1）
 ```markdown
-# api_test_project
-基于 FastAPI + MySQL + pytest 的用户管理接口自动化测试项目
+# 用户管理接口服务 User‑API‑Service
+
+## 项目简介
+本项目基于 FastAPI + MySQL + SQLAlchemy 开发，实现用户注册、查询、更新、删除基础CRUD接口，配套 pytest 接口自动化回归测试，采用标准后端分层架构，接口规范统一、可直接用于业务迭代与交付。
+
+## 技术栈
+- 后端框架：FastAPI
+- 数据库：MySQL 8.0+
+- 数据库驱动：pymysql
+- ORM框架：SQLAlchemy
+- 自动化测试：pytest + requests + pytest‑html
+- 运行环境：Python 3.8+
+- 版本管理：Git
+- 环境隔离：venv虚拟环境
 
 ## 项目目录结构
 ```
@@ -20,14 +41,6 @@ api_test_project/
 ├── README.md           # 项目说明
 └── report.html         # 测试报告
 ```
-
-## 技术栈
-- FastAPI：接口开发
-- MySQL：数据存储
-- SQLAlchemy：数据库操作
-- PyJWT：登录鉴权
-- pytest + requests：接口自动化测试
-- pytest-html：测试报告生成
 
 ## 功能说明
 - 用户注册（校验用户名 / 邮箱唯一）
@@ -106,4 +119,3 @@ pytest tests/test_user_api.py -v --html=report.html
 ```sql
 USE user_db;
 TRUNCATE TABLE user;
-
