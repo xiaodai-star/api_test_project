@@ -90,7 +90,7 @@ uvicorn main:app --reload --host 127.0.0.1 --port 8000
 ## 运行自动化测试
 ```bash
 # 执行全部接口测试用例
-pytest tests/test_user_api.py -v
+pytest tests/test_user_api.py -v --html=report.html
 ```
 ### 测试覆盖场景
 1. 基础功能：注册、登录、密码校验、用户名/邮箱唯一性校验
