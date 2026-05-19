@@ -34,11 +34,24 @@ class UserLogin(BaseModel):
 # ==========================
 # 密码工具方法
 # ==========================
-def get_pwd_hash(pwd):
-    return pwd
+# ==========================
+# 密码工具方法（真正 bcrypt 加密）
+# ==========================
+import bcrypt
 
+# 加密密码（存数据库用）
+def get_pwd_hash(pwd):
+    # 生成盐 + 哈希，返回加密字符串
+    salt = bcrypt.gensalt()
+    return bcrypt.hashpw(pwd.encode('utf-8'), salt).decode('utf-8')
+
+# 校验密码（登录用）
 def verify_pwd(plain, hashed):
-    return plain == hashed
+    # 明文 和 加密串 对比
+    try:
+        return bcrypt.checkpw(plain.encode('utf-8'), hashed.encode('utf-8'))
+    except:
+        return False
 
 # ==========================
 # JWT 令牌生成（登录凭证）
